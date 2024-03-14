@@ -5,3 +5,9 @@ export const getSwipers = () => new Promise((resolve, reject) => {
     resolve(v.data)
   })
 })
+
+export const getRentGroup = (area) => new Promise((resolve, reject) => {
+  instance.get('/home/groups', {params: {area}}).then(v => {
+    resolve(v.data)
+  })
+})

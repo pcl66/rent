@@ -3,7 +3,7 @@ body {
   height: 100%;
   font-family: 'Microsoft YaHei';
   color: #333;
-  background-color: #fff;
+  background-color: rgb(246, 246, 246);
 }
 * {
   margin: 0;

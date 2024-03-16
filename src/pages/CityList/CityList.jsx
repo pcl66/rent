@@ -14,7 +14,6 @@ export default function CityList() {
   useEffect(() => {
     setLoading(true)
     getCityList().then(v => {
-      console.log(v)
       const rawList = v.body
       const cityListGroup = letters.map(v => {
         return {
@@ -22,7 +21,6 @@ export default function CityList() {
           cityList: rawList.filter(val => val.pinyin.startsWith(v))
         }
       })
-      console.log(cityListGroup)
       setCityList(cityListGroup)
       setLoading(false)
     })
@@ -44,13 +42,13 @@ export default function CityList() {
             {
               cityList.filter(val => val.cityList.length > 0).map(v => {
                 return (
-                  <div className='city-list-content-item' key={v.letter}>
-                    <span className='city-list-content-item-letter'>{v.letter.toLocaleUpperCase()}</span>
+                  <div className='city-list-content-item' id={v.letter} key={v.letter}>
+                    <div className='city-list-content-item-letter'>{v.letter.toLocaleUpperCase()}</div>
                     <div className='city-list-content-item-city-list'>
                       {
                         v.cityList.map(v => {
                           return (
-                            <div className='city-list-content-item-city-list-item' key={v.id} onClick={() => { }}>
+                            <div className='city-list-content-item-city-list-item' key={v.value} onClick={() => { }}>
                               <span className='city-list-content-item-city-list-item-label'>{v.label}</span>
                             </div>
                             )
@@ -65,6 +63,20 @@ export default function CityList() {
           </div>
         )
       }
+      {/* 字母表 */}
+      <div className='right-dot'>
+        {
+          cityList.filter(val => val.cityList.length > 0).map(v => {
+            return (
+              <div className='right-dot-item' key={v.letter} onClick={() => {
+                document.getElementById(v.letter)?.scrollIntoView({
+                  behavior: 'smooth'
+                })
+              }}>{v.letter.toLocaleUpperCase()}</div>
+            )
+          })
+        }
+      </div>
     </div>
   )
 }

@@ -18,9 +18,29 @@
   }
   .city-list-content-item-letter {
     font-size: 18px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
   }
   .city-list-content-item-city-list-item {
     padding: 10px 0;
     border-bottom: 1px solid #e5e5e5;
+  }
+}
+.right-dot {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  &-item {
+    margin: 12px 7px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:active {
+      background-color: #6cd670;
+    }
   }
 }

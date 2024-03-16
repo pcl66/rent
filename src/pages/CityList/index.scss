@@ -1,7 +1,7 @@
 .city-list {
-  padding: 15px;
   background-color: #f5f5f5;
   .city-list-top {
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,5 +11,16 @@
       position: absolute;
       left: 10px;
     }
+  }
+  .city-list-content {
+    background-color: #fff;
+    padding: 10px 15px;
+  }
+  .city-list-content-item-letter {
+    font-size: 18px;
+  }
+  .city-list-content-item-city-list-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5e5;
   }
 }

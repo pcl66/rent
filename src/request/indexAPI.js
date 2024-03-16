@@ -17,3 +17,9 @@ export const getNews = (area) => new Promise((resolve, reject) => {
     resolve(v.data)
   })
 })
+
+export const getCityList = () => new Promise((resolve, reject) => {
+  instance.get('/area/city', {params: {level: 1}}).then(v => {
+    resolve(v.data)
+  })
+})

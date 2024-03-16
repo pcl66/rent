@@ -3,6 +3,7 @@ import { Swiper } from 'antd-mobile'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { getRentGroup, getSwipers } from '../../request/indexAPI'
+import SearchBar from './components/SearchBar'
 import './index.scss'
 import img1 from './images/nav-1.png'
 import img2 from './images/nav-2.png'
@@ -32,6 +33,8 @@ export default function Index() {
   ))
   return (
     <div>
+      {/* search bar */}
+      <SearchBar />
       {/* 轮播图 */}
       <div>
         <Swiper

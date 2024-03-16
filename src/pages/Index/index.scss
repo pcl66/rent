@@ -66,3 +66,34 @@
     border-color: transparent;
   }
 }
+
+.consult-head {
+  margin: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.consult-item {
+  margin: 10px 20px;
+  display: flex;
+  gap: 5px;
+  // height: 45px;
+  img {
+    width: 120px;
+  }
+  .consult-item-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .consult-item-right-title {
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .consult-item-right-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #858181;
+    }
+  }
+}

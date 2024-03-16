@@ -5,7 +5,11 @@ import ZTabBar from './ZTabBar/ZTabBar'
 export default function Home() {
   return (
     <div>
-      <Outlet />
+      <div style={{
+        paddingBottom: '50px'
+      }}>
+        <Outlet />
+      </div>
       <ZTabBar />
     </div>
   )

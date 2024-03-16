@@ -35,7 +35,7 @@ export default function ZTabBar() {
   }
 
   return (
-    <TabBar style={{position: 'fixed', bottom: '0px', left: '0px', width: '100%'}} activeKey={pathname} onChange={value => setRouteActive(value)}>
+    <TabBar style={{position: 'fixed', bottom: '0px', left: '0px', width: '100%', backgroundColor: '#fff'}} activeKey={pathname} onChange={value => setRouteActive(value)}>
       {tabs.map(item => (
         <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
       ))}

@@ -1,8 +1,12 @@
 import React from 'react'
 import { SearchBar as SearchBarAnt } from 'antd-mobile'
 import {LocationFill} from 'antd-mobile-icons'
+import { useNavigate } from 'react-router-dom'
 
 export default function SearchBar() {
+
+  const nav = useNavigate()
+
   return (
     <div style={{
       display: 'flex',
@@ -22,7 +26,11 @@ export default function SearchBar() {
         alignItems: 'center',
         backgroundColor: '#f5f5f5',
         height: '32px'
-      }}>
+      }}
+        onClick={() => {
+          nav('/city-list')
+        }}
+      >
         上海
         <div style={{
           position: 'absolute',

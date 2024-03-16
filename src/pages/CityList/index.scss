@@ -1,0 +1,15 @@
+.city-list {
+  padding: 15px;
+  background-color: #f5f5f5;
+  .city-list-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    .left-arrow {
+      position: absolute;
+      left: 10px;
+    }
+  }
+}

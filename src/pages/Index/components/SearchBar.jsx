@@ -37,7 +37,7 @@ export default function SearchBar() {
         display: 'flex',
         justifyContent: 'flex-end'
       }}>
-        <LocationFill fontSize={25}/>
+        <LocationFill color='#fff' fontSize={25}/>
       </div>
     </div>
   )

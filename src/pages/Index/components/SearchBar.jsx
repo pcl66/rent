@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SearchBar as SearchBarAnt } from 'antd-mobile'
 import {LocationFill} from 'antd-mobile-icons'
 import { useNavigate } from 'react-router-dom'
+import { CityProvider } from '../../../provider/CityProvider'
 
 export default function SearchBar() {
 
   const nav = useNavigate()
+  const { currentCity } = useContext(CityProvider)
 
   return (
     <div style={{
@@ -31,7 +33,7 @@ export default function SearchBar() {
           nav('/city-list')
         }}
       >
-        上海
+        {currentCity}
         <div style={{
           position: 'absolute',
         }}></div>
@@ -44,7 +46,11 @@ export default function SearchBar() {
         width: '8vw',
         display: 'flex',
         justifyContent: 'flex-end'
-      }}>
+      }}
+        onClick={() => {
+          nav('/house-find')
+        }}
+      >
         <LocationFill color='#fff' fontSize={25}/>
       </div>
     </div>

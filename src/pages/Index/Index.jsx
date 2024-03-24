@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Swiper } from 'antd-mobile'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -9,11 +9,14 @@ import img1 from './images/nav-1.png'
 import img2 from './images/nav-2.png'
 import img3 from './images/nav-3.png'
 import img4 from './images/nav-4.png'
+import { CityProvider } from '../../provider/CityProvider'
 
 export default function Index() {
   const [imgs, setImgs] = useState([{id: 0, imgSrc: ''}])
   const [groupInfos, setGroupInfos] = useState([])
   const [news, setNews] = useState([])
+  const { currentCity } = useContext(CityProvider)
+  console.log('currentCity', currentCity)
   const swiperRef = useRef(null)
   useEffect(() => {
     getSwipers().then(v => {

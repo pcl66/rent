@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './index.scss'
 import {LeftOutline} from 'antd-mobile-icons'
 import {SpinLoading} from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 import { getCityList } from '../../request/indexAPI'
 import { letters } from './const'
+import { CityProvider } from '../../provider/CityProvider'
 
 export default function CityList() {
   const nav = useNavigate()
   const [cityList, setCityList] = useState([])
   const [loading, setLoading] = useState(false)
+  const { setCurrentCity } = useContext(CityProvider)
 
   useEffect(() => {
     setLoading(true)
@@ -48,7 +50,7 @@ export default function CityList() {
                       {
                         v.cityList.map(v => {
                           return (
-                            <div className='city-list-content-item-city-list-item' key={v.value} onClick={() => { }}>
+                            <div className='city-list-content-item-city-list-item' key={v.value} onClick={() => { setCurrentCity(v.label); nav('/home/index') }}>
                               <span className='city-list-content-item-city-list-item-label'>{v.label}</span>
                             </div>
                             )
